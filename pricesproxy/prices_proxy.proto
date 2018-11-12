@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package productprices;
+
+service ProductPrices {
+    rpc GetPrice (ProductPricingContext) returns (ProductPricing) {
+    }
+}
+
+message ProductPricing {
+    message Price {
+        string currency = 1;
+        int32 basePrice = 2;
+        int32 finalPrice = 3;
+        int32 bonusWalletFunds = 4;
+    }
+
+    repeated Price currencies = 1;
+}
+
+message ProductPricingContext {
+    int32 productId = 1;
+    PricingContext context = 2;
+}
+
+message PricingContext {
+    int32 userId = 1;
+    string countryCode = 2;
+}
