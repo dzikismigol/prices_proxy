@@ -1,0 +1,13 @@
+{
+    "autoload": {
+      "psr-4": {
+        "": "src/"
+      }
+    },
+    "require": {
+        "grpc/grpc": "^1.15"
+    },
+    "require-dev": {
+        "google/protobuf": "^3.6"
+    }
+}
